@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public abstract class Videogame implements Comparable<Videogame> {
 
-    public static final PlaytimeComparator AMOUNT_PLAYTIME_COMPARATOR = new PlaytimeComparator(); //Wo soll das verwendet werden und wie?
+    public static final PlaytimeComparator AMOUNT_PLAYTIME_COMPARATOR = new PlaytimeComparator();
 
     private String name;
     private int ageRating;

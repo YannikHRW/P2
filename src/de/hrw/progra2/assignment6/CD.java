@@ -1,7 +1,7 @@
 package de.hrw.progra2.assignment6;
 
 public class CD extends Videogame{
-//gut
+//gut12
     private byte[] img;
 
     //test

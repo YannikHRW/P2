@@ -2,7 +2,7 @@ package de.hrw.progra2.assignment7;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person>{
 
     private String name;
     private BirthDate birthdate;
@@ -44,5 +44,17 @@ public class Person {
     @Override
     public String toString() {
         return name + ", " + birthdate;
+    }
+
+    @Override
+    public int compareTo(Person person) {
+        int compare = this.name.compareTo(person.name);
+        if (compare < 0) {
+            return -1;
+        } else if (compare == 0){
+            return 0;
+        } else {
+            return 1;
+        }
     }
 }

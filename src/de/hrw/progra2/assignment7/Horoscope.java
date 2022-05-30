@@ -3,12 +3,13 @@ package de.hrw.progra2.assignment7;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Horoscope {
 
     public static Map<Person, StarSign> mapPersonToStarSign(List<Person> persons){
 
-        Map<Person, StarSign> map = new HashMap<>();
+        Map<Person, StarSign> map = new TreeMap<>();
         int day;
         int month;
 

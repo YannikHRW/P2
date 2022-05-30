@@ -1,5 +1,7 @@
 package de.hrw.progra2.assignment7;
 
+import java.util.Objects;
+
 public class CoffeeToGo {
     private String productName;
     private double caffeineContent;
@@ -43,5 +45,31 @@ public class CoffeeToGo {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "CoffeeToGo{" +
+                "productName='" + productName + '\'' +
+                ", caffeineContent=" + caffeineContent +
+                ", containsMilk=" + containsMilk +
+                ", amount=" + amount +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CoffeeToGo that = (CoffeeToGo) o;
+        return Double.compare(that.caffeineContent, caffeineContent) == 0
+                && containsMilk == that.containsMilk
+                && Double.compare(that.amount, amount) == 0
+                && Objects.equals(productName, that.productName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(productName, caffeineContent, containsMilk, amount);
     }
 }

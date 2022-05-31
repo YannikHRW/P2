@@ -48,13 +48,6 @@ public class Person implements Comparable<Person>{
 
     @Override
     public int compareTo(Person person) {
-        int compare = this.name.compareTo(person.name);
-        if (compare < 0) {
-            return -1;
-        } else if (compare == 0){
-            return 0;
-        } else {
-            return 1;
-        }
+        return this.name.compareTo(person.name);
     }
 }

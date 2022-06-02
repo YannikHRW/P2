@@ -2,7 +2,7 @@ package de.hrw.progra2.assignment7;
 
 import java.util.Objects;
 
-public class CoffeeToGo {
+public class CoffeeToGo implements Comparable<AmountCompparator> {
     private String productName;
     private double caffeineContent;
     private boolean containsMilk;
@@ -72,4 +72,11 @@ public class CoffeeToGo {
     public int hashCode() {
         return Objects.hash(productName, caffeineContent, containsMilk, amount);
     }
+
+
+    @Override
+    public int compareTo(AmountCompparator o) {
+        return 0;
+    }
 }
+

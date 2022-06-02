@@ -1,5 +1,6 @@
 package de.hrw.progra2.assignment7;
 
+import javax.naming.Name;
 import java.util.*;
 
 public class Main {
@@ -16,9 +17,24 @@ public class Main {
 
         System.out.println(Horoscope.mapPersonToStarSign(persons));
 
+
+        CoffeeToGo Starbucks = new CoffeeToGo("Cappuchino", 40.0, true, 250);
+        CoffeeToGo Tchibo = new CoffeeToGo("Latte Macciato", 27.0, true, 260);
+        CoffeeToGo Mcafe = new CoffeeToGo("Esspresso", 100, false, 30);
+
+        LinkedList<CoffeeToGo> coffeeToGoList = new LinkedList<>();
+        coffeeToGoList.add(Starbucks);
+        coffeeToGoList.add(Tchibo);
+        coffeeToGoList.add(Mcafe);
+
+        Collections.sort(coffeeToGoList);
+        System.out.println("Nach Namen sortierte Liste: \n" + coffeeToGoList);
+
+        Collections.sort(coffeeToGoList,CoffeeToGo.AMOUNT_COMPARATOR);
+        System.out.println("Nach Kaffeemenge in Milliliter sortierte Liste: \n " + coffeeToGoList);
+
+        Collections.sort(coffeeToGoList, CoffeeToGo.PRODUCT_NAME_COMPARATOR);
+        System.out.println("Nach alphabetischen Reihenfolge sortierte Liste: \n " + coffeeToGoList );
+
     }
-
-    List<CoffeeToGo> coffee = new LinkedList<>();
-   coffee.add(new CoffeeToGo);
-
 }

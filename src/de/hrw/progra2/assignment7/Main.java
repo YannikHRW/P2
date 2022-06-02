@@ -18,4 +18,7 @@ public class Main {
 
     }
 
+    List<CoffeeToGo> coffee = new LinkedList<>();
+   coffee.add(new CoffeeToGo);
+
 }

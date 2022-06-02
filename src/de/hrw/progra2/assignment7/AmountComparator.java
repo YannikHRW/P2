@@ -4,8 +4,8 @@ import java.util.Comparator;
 
 public class AmountComparator implements Comparator<CoffeeToGo> {
     @Override
-    public int compare(CoffeeToGo o1, CoffeeToGo o2) {
-        return Double.compare(o1.getCaffeineContent(), o2.getCaffeineContent());
+    public int compare(CoffeeToGo coffee1, CoffeeToGo coffee2) {
+        return Double.compare(coffee1.getAmount(), coffee2.getAmount());
     }
 }
 

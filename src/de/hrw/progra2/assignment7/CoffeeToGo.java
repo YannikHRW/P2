@@ -80,9 +80,17 @@ public class CoffeeToGo implements Comparable<CoffeeToGo> {
 
 
     @Override
-    public int compareTo(CoffeeToGo o){return this.caffeineContent.compareTo(o.getCaffeineContent());}
-
-
+    public int compareTo(CoffeeToGo coffee){
+        if (caffeineContent > coffee.getCaffeineContent()) {
+            return 1;
+        } else if (caffeineContent < coffee.getCaffeineContent()) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
+
+
+}
 
 

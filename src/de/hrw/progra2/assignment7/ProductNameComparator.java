@@ -4,9 +4,10 @@ import java.util.Comparator;
 public class ProductNameComparator implements Comparator<CoffeeToGo> {
 
     @Override
-    public int compare(CoffeeToGo c1, CoffeeToGo c2) {return String.compare(c1.getProductName(),c2.getProductName());}
-
-
+    public int compare(CoffeeToGo coffee1, CoffeeToGo coffee2) {
+        return coffee1.getProductName().compareTo(coffee2.getProductName());
     }
+
+}
 
 

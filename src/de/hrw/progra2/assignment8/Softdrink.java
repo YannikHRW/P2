@@ -53,6 +53,15 @@ public enum Softdrink {
     }
 
     /**
+     * checks if softdrink contains sugar.
+     *
+     * @return true if Softdrink contains no sugar, false otherwise
+     */
+    public boolean hasNoSugar() {
+        return getBeverageVersion() != BeverageVersion.REGULAR;
+    }
+
+    /**
      *
      * @return Softdrink as a String representation.
      */

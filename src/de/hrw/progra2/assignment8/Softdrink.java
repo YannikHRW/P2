@@ -1,7 +1,7 @@
 package de.hrw.progra2.assignment8;
 
 /**
- *
+ * A Softdrink with amount of unhealthy Substances and Version.
  */
 public enum Softdrink {
     COLA(10.6, BeverageVersion.REGULAR),
@@ -14,20 +14,48 @@ public enum Softdrink {
     PEPSI(13, BeverageVersion.REGULAR),
     PEPSI_LIGHT(12.5, BeverageVersion.LIGHT);
 
+    /**
+     * Amount of unhealthy Substances in the Drink.
+     */
     private double unhealthySubstances;
+    /**
+     * Version of the beverage (Non-Caffeine, Non-Sugar...)
+     */
     private BeverageVersion beverageVersion;
+
+    /**
+     * Constructor setting basic fields.
+     *
+     * @param unhealthySubstances
+     * @param bV
+     */
     Softdrink(double unhealthySubstances, BeverageVersion bV) {
         this.unhealthySubstances = unhealthySubstances;
         this.beverageVersion = bV;
     }
 
+    /**
+     * Getter for the Amount of unhealthy substances in the Drink.
+     *
+     * @return Amount of unhealthy substances in the Drink.
+     */
     public double getUnhealthySubstances() {
         return unhealthySubstances;
     }
+
+    /**
+     * Getter for the Beverage Version of Drink.
+     *
+     * @return Beverage Version of Drink.
+     */
     public BeverageVersion getBeverageVersion() {
         return beverageVersion;
     }
 
+    /**
+     *
+     * @return Softdrink as a String representation.
+     */
     @Override
     public String toString() {
         return "Softdrink{" +

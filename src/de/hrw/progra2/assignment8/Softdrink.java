@@ -11,7 +11,7 @@ public enum Softdrink {
     ICETEE_ZERO(12.4, BeverageVersion.ZERO),
     SPRITE(12, BeverageVersion.REGULAR),
     SPRITE_ZERO(11.3, BeverageVersion.ZERO),
-    PEPSI(13, BeverageVersion.REGULAR),
+    PEPSI(13.2, BeverageVersion.REGULAR),
     PEPSI_LIGHT(12.5, BeverageVersion.LIGHT);
 
     /**
@@ -29,9 +29,12 @@ public enum Softdrink {
      * @param unhealthySubstances
      * @param bV
      */
-    Softdrink(double unhealthySubstances, BeverageVersion bV) {
+    Softdrink(double unhealthySubstances, BeverageVersion bV) throws UnhealthySubstancesAmountException{
         this.unhealthySubstances = unhealthySubstances;
         this.beverageVersion = bV;
+        if (this.unhealthySubstances > 13) {
+            throw new UnhealthySubstancesAmountException(unhealthySubstances);
+        }
     }
 
     /**

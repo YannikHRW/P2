@@ -11,8 +11,11 @@ public enum Softdrink {
     ICETEE_ZERO(12.4, BeverageVersion.ZERO),
     SPRITE(12, BeverageVersion.REGULAR),
     SPRITE_ZERO(11.3, BeverageVersion.ZERO),
-    PEPSI(13.2, BeverageVersion.REGULAR),
-    PEPSI_LIGHT(12.5, BeverageVersion.LIGHT);
+    PEPSI(13, BeverageVersion.REGULAR),
+    PEPSI_LIGHT(12.5, BeverageVersion.LIGHT)/*,
+
+    COLA_VANILLA(13.2,BeverageVersion.REGULAR),
+    SINALCO(12.3, BeverageVersion.REGULAR)*/;
 
     /**
      * Amount of unhealthy Substances in the Drink.
@@ -26,14 +29,19 @@ public enum Softdrink {
     /**
      * Constructor setting basic fields.
      *
-     * @param unhealthySubstances
-     * @param bV
+     * @param unhealthySubstances amount of unhealthy substances of the softdrink.
+     * @param bV Version of the beverage.
+     * @throws UnhealthySubstancesAmountException if amount of unhealthy substances is higher then 13.
+     * @throws ForbiddenSoftdrinkNameException if name of Softdrink is illegal.
      */
-    Softdrink(double unhealthySubstances, BeverageVersion bV) throws UnhealthySubstancesAmountException{
+    Softdrink(double unhealthySubstances, BeverageVersion bV) throws UnhealthySubstancesAmountException, ForbiddenSoftdrinkNameException{
         this.unhealthySubstances = unhealthySubstances;
         this.beverageVersion = bV;
         if (this.unhealthySubstances > 13) {
             throw new UnhealthySubstancesAmountException(unhealthySubstances);
+        }
+        if (this.name().equals("COCA_COLA") || this.name().equals("SINALCO") || this.name().equals("DR_PEPPER")) {
+            throw new ForbiddenSoftdrinkNameException(this.name());
         }
     }
 

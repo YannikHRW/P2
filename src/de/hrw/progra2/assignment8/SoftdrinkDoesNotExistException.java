@@ -5,9 +5,9 @@ public class SoftdrinkDoesNotExistException extends RuntimeException {
     private String name;
 
     /**
-     * Constructor with input value.
+     * Constructor with input name and the thrown exception which caused it.
      *
-     * @param name value
+     * @param name name
      */
     public SoftdrinkDoesNotExistException(String name, Exception causedBy) {
         super("Softdrink '" + name + "' does not exist! " + causedBy);
@@ -16,9 +16,9 @@ public class SoftdrinkDoesNotExistException extends RuntimeException {
     }
 
     /**
-     * Returns input value.
+     * Returns input name.
      *
-     * @return input value
+     * @return input name
      */
     public String getName() {
         return name;

@@ -1,44 +1,30 @@
 package de.hrw.progra2.assignment8;
 
+public class EnumUtil {
 
-
-import java.util.EnumMap;
-import java.util.HashMap;
-import java.util.Map;
-
-public  class EnumUtil {
-
-    private String name;
-    private String beverageVersion;
-    private double unhealthySubstances;
-    private boolean isBluffPackage;
-
-
-    private boolean getIsBluffPackage(){
-    Softdrink name = Softdrink.valueOf(beverageVersion);
-    if(this.unhealthySubstances{
-
+    public static boolean isBluffPackage(Softdrink softdrink) {
+        if (softdrink.getBeverageVersion() == BeverageVersion.ZERO || softdrink.getBeverageVersion() == BeverageVersion.LIGHT) {
+            return softdrink.getUnhealthySubstances() > 8;
         }
-        return true;
-
-
+        return false;
     }
 
 
+    public static BeverageVersion getSoftdrinkVersion(String name) {
 
-    private String getSoftdrinkVersion() {
-        Softdrink name = Softdrink.valueOf(beverageVersion);
         try {
-            name = Softdrink.valueOf(beverageVersion);
-
-        } catch (Exception e) {
-            System.out.println("leider bieten wir das Getränk nicht an!");
+            Softdrink softdrink = Softdrink.valueOf(name);
+            return softdrink.getBeverageVersion();
+        } catch (IllegalArgumentException iae) {
+            throw new SoftdrinkDoesNotExistException(name, iae);
         }
-        return this.name;
+
     }
 
-    public int  mapUnheltySubstancesToBeverrageVersion(){
+}
+
+    /*public int  mapUnheltySubstancesToBeverrageVersion(){
         EnumMap<Softdrink, Double> enumMap = new EnumMap<Softdrink, Double>(Softdrink.class);
         Softdrink.put(Softdrink.COLA, 8.0 );
         Softdrink.put(Softdrink.COLA_LIGHT,5.6);
-    }
+    }*/

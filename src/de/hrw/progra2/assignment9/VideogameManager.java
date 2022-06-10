@@ -7,8 +7,7 @@ import java.util.List;
 
 public class VideogameManager {
 
-    List <Videogame> videogames = new ArrayList<>();
-
+    List<Videogame> videogames = new ArrayList<>();
 
 
     private List<String> getFields(String line, char seperator) {
@@ -26,14 +25,23 @@ public class VideogameManager {
             if (openingString) {
                 stringBuilder.append(line.charAt(i));
             } else {
-                if (line.charAt(i) == seperator || i == line.length()-1) {
+
+                if (i == line.length() - 1) {
+                    if (line.charAt(i) == seperator) {
+                        fields.add("");
+                        fields.add("");
+                    } else {
+                        stringBuilder.append(line.charAt(i));
+                        fields.add(String.valueOf(stringBuilder));
+                        stringBuilder.delete(0, stringBuilder.length());
+                    }
+                } else if (line.charAt(i) == seperator) {
                     fields.add(String.valueOf(stringBuilder));
                     stringBuilder.delete(0, stringBuilder.length());
                 } else {
                     stringBuilder.append(line.charAt(i));
                 }
             }
-
         }
         return fields;
     }

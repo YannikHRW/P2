@@ -1,0 +1,80 @@
+package de.hrw.progra2.assignment10;
+
+import de.hrw.progra2.assignment10.model.*;
+
+import java.util.AbstractMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class InformationPanel {
+
+    /**
+     * For each flower in a garden bed, this method prints the species and
+     * whether the flower has enough sunlight.
+     * @param gardenBed a garden bed
+     */
+    public void printFlowerInformationForGardenBed(GardenBed gardenBed) {
+
+    }
+
+    /**
+     * Prints every flower of a garden bed that has a preferred fertilizer
+     * which is also within the soil of the garden bed.
+     * @param gardenBed a garden bed
+     */
+    public void printFlowersWithAdequateFertilizer(GardenBed gardenBed) {
+        // TODO: Solution expected
+    }
+
+    /**
+     * Returns garden beds that do not use a given fertilizer.
+     * @param gardenBeds an array of garden beds
+     * @param fertilizer forbidden fertilizer
+     * @return Returns garden beds that do not include the forbidden fertilizer.
+     */
+    public List<GardenBed> getGardenBedsByFertilizer(GardenBed[] gardenBeds, Fertilizer fertilizer) {
+        // TODO: Solution expected
+    }
+
+    /**
+     * Calculates the average visitors for given botanical gardens.
+     * @param botanicalGardens List of botanical gardens
+     * @return Average amount of visitors
+     */
+    public double getAverageVisitorsForBotanicalGardens(List<BotanicalGarden> botanicalGardens) {
+        // TODO: Solution expected
+    }
+
+    /**
+     * Counts all flowers within a garden bed by species.
+     * @param gardenBed garden bed
+     * @return Returns a map, mapping the species to the number of flowers of that species.
+     */
+    public Map<Species, Long> getGroupedFlowersBySpeciesOfBotanicalGarden(GardenBed gardenBed) {
+        // TODO: Solution expected
+    }
+
+    /**
+     * Returns all garden beds from given list of graden beds that contain given flower.
+     * @param gardenBeds list of garden beds
+     * @param flower flow to search for
+     * @return Returns a list of graden beds that contain given flower
+     */
+    public List<GardenBed> getGardenBedsWithSpecificFlower(List<GardenBed> gardenBeds, Flower flower) {
+        // TODO: Solution expected
+    }
+
+    // === EXTRA EXERCISE ===
+
+    /**
+     * Calculates the sum of daisy flowers within a botanical garden.
+     * @param botanicalGarden
+     * @return Number of daisy flowers
+     */
+    public long getNumberOfDaisyFlowers(BotanicalGarden botanicalGarden) {
+        // TODO: Solution expected
+    }
+}

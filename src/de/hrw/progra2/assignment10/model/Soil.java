@@ -15,7 +15,7 @@ public class Soil {
      * @param fertilizers
      */
     public Soil(List<Fertilizer> fertilizers) {
-        this.fertilizers = new ArrayList<>();
+        this.fertilizers = fertilizers;
     }
 
     public List<Fertilizer> getFertilizers() {

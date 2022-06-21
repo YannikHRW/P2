@@ -18,7 +18,7 @@ public class GardenBed {
      * @param soil
      */
     public GardenBed(List<Flower> flowers, Soil soil) {
-        this.flowers = new ArrayList<>();
+        this.flowers = flowers;
         this.soil = soil;
     }
 

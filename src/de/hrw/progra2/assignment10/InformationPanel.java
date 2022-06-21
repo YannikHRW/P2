@@ -17,7 +17,7 @@ public class InformationPanel {
      * @param gardenBed a garden bed
      */
     public void printFlowerInformationForGardenBed(GardenBed gardenBed) {
-
+        gardenBed.getFlowers().stream().map(x -> x.getSpecies() + "\n -> has enough sun: " + x.isEnoughSun()).forEach(System.out::println);
     }
 
     /**
@@ -26,7 +26,7 @@ public class InformationPanel {
      * @param gardenBed a garden bed
      */
     public void printFlowersWithAdequateFertilizer(GardenBed gardenBed) {
-        // TODO: Solution expected
+        gardenBed.getFlowers().stream().filter(x -> gardenBed.getSoil().getFertilizers().contains(x.getSuitableFertilizer())).forEach(System.out::println);
     }
 
     /**
@@ -37,6 +37,7 @@ public class InformationPanel {
      */
     public List<GardenBed> getGardenBedsByFertilizer(GardenBed[] gardenBeds, Fertilizer fertilizer) {
         // TODO: Solution expected
+        return null;
     }
 
     /**
@@ -46,6 +47,7 @@ public class InformationPanel {
      */
     public double getAverageVisitorsForBotanicalGardens(List<BotanicalGarden> botanicalGardens) {
         // TODO: Solution expected
+        return 0.0;
     }
 
     /**
@@ -55,6 +57,7 @@ public class InformationPanel {
      */
     public Map<Species, Long> getGroupedFlowersBySpeciesOfBotanicalGarden(GardenBed gardenBed) {
         // TODO: Solution expected
+        return null;
     }
 
     /**
@@ -65,6 +68,7 @@ public class InformationPanel {
      */
     public List<GardenBed> getGardenBedsWithSpecificFlower(List<GardenBed> gardenBeds, Flower flower) {
         // TODO: Solution expected
+        return null;
     }
 
     // === EXTRA EXERCISE ===
@@ -76,5 +80,6 @@ public class InformationPanel {
      */
     public long getNumberOfDaisyFlowers(BotanicalGarden botanicalGarden) {
         // TODO: Solution expected
+        return 0;
     }
 }

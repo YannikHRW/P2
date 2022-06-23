@@ -51,16 +51,24 @@ public class InformationPanel {
 
     /**
      * Counts all flowers within a garden bed by species.
-     * @param botanicalGarden garden bed
+     * @param gardenBed garden bed
      * @return Returns a map, mapping the species to the number of flowers of that species.
      */
-    public Map<Species, Long> getGroupedFlowersBySpeciesOfBotanicalGarden(BotanicalGarden botanicalGarden) {
-        Map <Species, Long> map;
+    public Map<Species, Long> getGroupedFlowersBySpeciesOfBotanicalGarden(GardenBed gardenBed) {
 
-        //Eigentlich wollte ich hier alle Flowers zählen, welche der angegebenen Spezies entsprechen. Allerdings verstehe ich nicht, wieso ich hier nur Referenzen auf Streams ansgegeben bekomme...
-        botanicalGarden.getGardenBeds().stream().map(gardenBed -> gardenBed.getFlowers().stream().filter(flower -> flower.getSpecies() == Species.DAHLIA)).forEach(System.out::println);
+        Map <Species, Long> map = new HashMap<>();
 
-        return null;
+        long amountDahlia = gardenBed.getFlowers().stream().filter(flower -> flower.getSpecies() == Species.DAHLIA).count();
+        long amountDaisy = gardenBed.getFlowers().stream().filter(flower -> flower.getSpecies() == Species.DAISY).count();
+        long amountOrchid = gardenBed.getFlowers().stream().filter(flower -> flower.getSpecies() == Species.ORCHID).count();
+        long amountTulip = gardenBed.getFlowers().stream().filter(flower -> flower.getSpecies() == Species.TULIP).count();
+
+        map.put(Species.DAHLIA, amountDahlia);
+        map.put(Species.DAISY, amountDaisy);
+        map.put(Species.ORCHID, amountOrchid);
+        map.put(Species.TULIP, amountTulip);
+
+        return map;
     }
 
     /**

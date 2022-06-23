@@ -15,6 +15,7 @@ public class GardenShow {
         flowersInFirstBed.add(new Flower(Species.ORCHID, Fertilizer.GASEOUS, false));
         flowersInFirstBed.add(new Flower(Species.TULIP, Fertilizer.ORGANIC, true));
         flowersInFirstBed.add(new Flower(Species.DAHLIA, Fertilizer.MINERAL, false));
+        flowersInFirstBed.add(new Flower(Species.DAHLIA, Fertilizer.ORGANIC, true));
 
         List<Fertilizer> fertilizersInFirstBed = new ArrayList<>();
         fertilizersInFirstBed.add(Fertilizer.GASEOUS);
@@ -65,7 +66,7 @@ public class GardenShow {
         System.out.println(informationPanel.getAverageVisitorsForBotanicalGardens(botanicalGardens));
 
         //e)
-        informationPanel.getGroupedFlowersBySpeciesOfBotanicalGarden(firstBotanicalGarden);
+        System.out.println(informationPanel.getGroupedFlowersBySpeciesOfBotanicalGarden(firstGardenBed));
 
 
         //f)

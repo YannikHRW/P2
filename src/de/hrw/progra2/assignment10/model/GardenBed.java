@@ -47,6 +47,6 @@ public class GardenBed {
         return "GardenBed{" +
                 "flowers=" + flowers +
                 ", soil=" + soil +
-                '}';
+                "}\n";
     }
 }

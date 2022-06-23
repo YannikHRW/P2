@@ -25,7 +25,7 @@ public class BotanicalGarden {
      * @param totalVisitorsPerYear
      */
     public BotanicalGarden(List<GardenBed> gardenBeds, LocalDate openingDate, LocalDate closingDate, long totalVisitorsPerYear) {
-        this.gardenBeds = new ArrayList<>();
+        this.gardenBeds = gardenBeds;
         this.openingDate = openingDate;
         this.closingDate = closingDate;
         this.totalVisitorsPerYear = totalVisitorsPerYear;

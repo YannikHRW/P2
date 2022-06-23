@@ -2,11 +2,12 @@ package de.hrw.progra2.assignment10;
 
 import de.hrw.progra2.assignment10.model.*;
 
-import java.util.AbstractMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.Flow;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 public class InformationPanel {
@@ -36,8 +37,7 @@ public class InformationPanel {
      * @return Returns garden beds that do not include the forbidden fertilizer.
      */
     public List<GardenBed> getGardenBedsByFertilizer(GardenBed[] gardenBeds, Fertilizer fertilizer) {
-        // TODO: Solution expected
-        return null;
+        return Arrays.stream(gardenBeds).filter(x -> !x.getSoil().getFertilizers().contains(fertilizer)).toList();
     }
 
     /**
@@ -46,17 +46,20 @@ public class InformationPanel {
      * @return Average amount of visitors
      */
     public double getAverageVisitorsForBotanicalGardens(List<BotanicalGarden> botanicalGardens) {
-        // TODO: Solution expected
-        return 0.0;
+        return botanicalGardens.stream().collect(Collectors.averagingDouble(BotanicalGarden::getTotalVisitorsPerYear));
     }
 
     /**
      * Counts all flowers within a garden bed by species.
-     * @param gardenBed garden bed
+     * @param botanicalGarden garden bed
      * @return Returns a map, mapping the species to the number of flowers of that species.
      */
-    public Map<Species, Long> getGroupedFlowersBySpeciesOfBotanicalGarden(GardenBed gardenBed) {
-        // TODO: Solution expected
+    public Map<Species, Long> getGroupedFlowersBySpeciesOfBotanicalGarden(BotanicalGarden botanicalGarden) {
+        Map <Species, Long> map;
+
+        //Eigentlich wollte ich hier alle Flowers zählen, welche der angegebenen Spezies entsprechen. Allerdings verstehe ich nicht, wieso ich hier nur Referenzen auf Streams ansgegeben bekomme...
+        botanicalGarden.getGardenBeds().stream().map(gardenBed -> gardenBed.getFlowers().stream().filter(flower -> flower.getSpecies() == Species.DAHLIA)).forEach(System.out::println);
+
         return null;
     }
 
@@ -67,8 +70,7 @@ public class InformationPanel {
      * @return Returns a list of graden beds that contain given flower
      */
     public List<GardenBed> getGardenBedsWithSpecificFlower(List<GardenBed> gardenBeds, Flower flower) {
-        // TODO: Solution expected
-        return null;
+        return gardenBeds.stream().filter(x -> x.getFlowers().stream().anyMatch((flower1 -> flower1.equals(flower)))).toList();
     }
 
     // === EXTRA EXERCISE ===
@@ -79,7 +81,8 @@ public class InformationPanel {
      * @return Number of daisy flowers
      */
     public long getNumberOfDaisyFlowers(BotanicalGarden botanicalGarden) {
-        // TODO: Solution expected
+        long counter = 0;
+        //botanicalGarden.getGardenBeds().stream().map(x -> x.getFlowers().stream().flatMap(Collection::stream));
         return 0;
     }
 }

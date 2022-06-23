@@ -1,5 +1,7 @@
 package de.hrw.progra2.assignment10.model;
 
+import java.util.Objects;
+
 /**
  * A flower.
  */
@@ -47,6 +49,19 @@ public class Flower {
 
     public void setEnoughSun(boolean enoughSun) {
         this.enoughSun = enoughSun;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Flower flower = (Flower) o;
+        return enoughSun == flower.enoughSun && species == flower.species && suitableFertilizer == flower.suitableFertilizer;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(species, suitableFertilizer, enoughSun);
     }
 
     @Override
